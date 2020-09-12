@@ -38,6 +38,12 @@ Coding in host machine and build in Docker container
 
 
 ## The finnal Docker commond 
+- Build
 ```
-  docker run -v /Users/bhuang/ben-github/cpp-docker-webserver/cppweb:/usr/src/cppweb -p 8080:8080 -e PORT=8080 -ti cppbox:latest /usr/src/cppweb/hello_crow/build/hello_crow
+  docker run -v /Users/bhuang/ben-github/cpp-docker-webserver/cppweb:/usr/src/cppweb -ti cppbox:latest bash
 ```
+- Run server and open port
+```
+  docker run -v /Users/bhuang/ben-github/cpp-docker-webserver/cppweb:/usr/src/cppweb -p 8080:8080 -e PORT=8080  -w /usr/src/cppweb/hello_crow/build -ti cppbox:latest ./hello_crow
+```
+-w set working path to /usr/src/cppweb/hello_crow/build. Help the code use "../public" to access the file
