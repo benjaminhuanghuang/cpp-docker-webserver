@@ -1,0 +1,8 @@
+FROM bbox:latest
+WORKDIR /urs/src/cppweb/hello_crow
+COPY . .
+
+WORKDIR /urs/src/cppweb/hello_crow/build
+RUN cmake .
+RUN make
+CMD ["./hello_crow"]
