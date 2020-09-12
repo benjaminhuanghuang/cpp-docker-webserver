@@ -58,6 +58,11 @@ int main(int argc, char* argv[]) {
       sendHtml(res, "index");
     });
 
+  CROW_ROUTE(app, "/about")
+    ([](const request &req, response &res){
+      sendHtml(res, "about");
+    });  
+
   CROW_ROUTE(app, "/hello")
     ([](){
       return "<div><h1>Hello, Crow.</h1></div>";
